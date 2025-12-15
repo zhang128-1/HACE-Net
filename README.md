@@ -23,3 +23,21 @@ Figure 5: Integrated interpretability and reliability assessment of the proposed
 ![](figures/6.png)
 
 Figure 6: Feature-importance and minimal-counterfactual profiling of the UNMPD146 discrimination setting
+
+## Installation
+
+We run HACE-Net and previous methods on a system running Ubuntu 22.04, with Python 3.8, PyTorch 2.1.0, and CUDA 12.1.
+
+## Experiment
+###  Models Evaluation
+
+![](tables/1.png)
+
+Figure 7: Patch- and subject-level baseline performance across all datasets. Results are reported as Accuracy / Specificity (%). Red background indicates the best result, Blue background indicates the runner-up model , and blue text in other rows indicates isolated second-best results.
+
+### Ablation Study
+
+![](tables/2.png)
+
+Figure 8: Ablation study on patch-level performance. The best results are highlighted in red with a light red background, and the second-best results are in blue with a light blue background.
+
