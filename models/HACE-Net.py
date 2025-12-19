@@ -72,11 +72,11 @@ class classifier(nn.Module):
     def __init__(self,out_dim):
         super(classifier, self).__init__()
         self.lead_branches = nn.ModuleList([
-            self._make_cnn_branch(in_channels=23),   # Frontal Lobe(Fp1, Fp2, F3, F4, FZ)
-            self._make_cnn_branch(in_channels=7),   # Central Lobe(CZ, C3, C4)
-            self._make_cnn_branch(in_channels=15),   # Parietal Lobe(PZ, P3, P4)
-            self._make_cnn_branch(in_channels=9),   # Occipital Lobe (O1, O2)
-            self._make_cnn_branch(in_channels=10),   # Temporal Lobe(F7, F8, T3, T4, T5, T6)
+            self._make_cnn_branch(in_channels=23),   
+            self._make_cnn_branch(in_channels=7),   
+            self._make_cnn_branch(in_channels=15),  
+            self._make_cnn_branch(in_channels=9),   
+            self._make_cnn_branch(in_channels=10),  
         ])
 
         self.global_avg_pool = nn.AdaptiveAvgPool1d(1)
@@ -310,7 +310,7 @@ class GMMFusion(nn.Module):
         # features: (B, M, D)
 
         B, M, D = features.size()
-        # print(features.shape)
+
         feats_exp = features.unsqueeze(2)             # (B, M, 1, D)
         means = self.means.unsqueeze(0).unsqueeze(0)  # (1, 1, K, D)
         vars_ = torch.exp(self.log_vars).unsqueeze(0).unsqueeze(0) + 1e-6
